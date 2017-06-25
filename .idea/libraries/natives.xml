@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="natives">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/jar/natives" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
