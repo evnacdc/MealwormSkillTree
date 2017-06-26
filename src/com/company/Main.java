@@ -8,13 +8,14 @@ public class Main extends StateBasedGame {
 
 
     public static final String gameName = "Skill Tree";
-    public static final int treeView = 0;
+    public static final int skillTreeIndex = 0;
+    public static final int mainMapIndex = 1;
 
     public Main(String gameName)
     {
         super(gameName);
-        this.addState(new SkillTree(treeView));
-
+        this.addState(new SkillTree(skillTreeIndex));
+        this.addState(new MainMap(mainMapIndex));
     }
 
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class Main extends StateBasedGame {
         try
         {
             gameContainer = new AppGameContainer(new Main(gameName));
-            gameContainer.setDisplayMode(1000,800,false);
+            gameContainer.setDisplayMode(800,600,false);
             gameContainer.start();
         }
         catch (SlickException se)
@@ -35,7 +36,8 @@ public class Main extends StateBasedGame {
     @Override
     public void initStatesList(GameContainer gameContainer) throws SlickException
     {
-        this.getState(treeView).init(gameContainer, this);
-        this.enterState(treeView);
+        this.getState(skillTreeIndex).init(gameContainer, this);
+        this.getState(mainMapIndex).init(gameContainer, this);
+        this.enterState(mainMapIndex);
     }
 }
