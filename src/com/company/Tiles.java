@@ -11,6 +11,10 @@ public class Tiles
 	public static GameTile Grass3;
 	public static GameTile SpikeBall;
 
+	public static GameTile DirtPatch_3_3;
+
+	public static GameTile Tree_2_5;
+
 	public static GameTile TallGrass_LB;
 	public static GameTile TallGrass_MB;
 	public static GameTile TallGrass_RB;
@@ -34,7 +38,10 @@ public class Tiles
 			Grass3 = new GroundGameTile(1,25);
 			SpikeBall = new GroundGameTile(9,14);
 
+			DirtPatch_3_3 = new GroundGameTile(5,17,3,3);
+
 			Stump = new GroundGameTile(16,14,3,2);
+			Tree_2_5 = new GroundGameTile(30,0,5,2);
 
 		}
 		catch (Exception e)

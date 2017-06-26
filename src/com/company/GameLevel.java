@@ -27,18 +27,20 @@ public abstract class GameLevel
 			{
 
 				currentTile = Map[row][col];
-
-				if(currentTile.singleBlock)
+				if(currentTile != null)
 				{
-					g.drawImage(currentTile.sprite[0][0], col * GameConfig.SPRITE_BLOCK_WIDTH + offsetX, row * GameConfig.SPRITE_BLOCK_HEIGHT + offsetY);
-				}
-				else
-				{
-					for(int spriteCol=0; spriteCol <currentTile.dimensions.getWidth() ; spriteCol++)
+					if (currentTile.singleBlock)
 					{
-						for (int spriteRow = 0; spriteRow < currentTile.dimensions.getHeight(); spriteRow++)
+						g.drawImage(currentTile.sprite[0][0], col * GameConfig.SPRITE_BLOCK_WIDTH + offsetX, row * GameConfig.SPRITE_BLOCK_HEIGHT + offsetY);
+					}
+					else
+					{
+						for (int spriteCol = 0; spriteCol < currentTile.dimensions.getWidth(); spriteCol++)
 						{
-							g.drawImage(currentTile.sprite[spriteRow][spriteCol], (col + spriteCol) * GameConfig.SPRITE_BLOCK_WIDTH + offsetX, (row + spriteRow) * GameConfig.SPRITE_BLOCK_HEIGHT + offsetY);
+							for (int spriteRow = 0; spriteRow < currentTile.dimensions.getHeight(); spriteRow++)
+							{
+								g.drawImage(currentTile.sprite[spriteRow][spriteCol], (col + spriteCol) * GameConfig.SPRITE_BLOCK_WIDTH + offsetX, (row + spriteRow) * GameConfig.SPRITE_BLOCK_HEIGHT + offsetY);
+							}
 						}
 					}
 				}
