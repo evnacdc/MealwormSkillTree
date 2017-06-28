@@ -1,4 +1,4 @@
-package com.company.gameVault.outdoorLevels;
+package com.company.gameLevel.outdoorLevels;
 
 import com.company.gameLevel.Level;
 import com.company.gameObjects.GameObject;

@@ -1,9 +1,7 @@
-package com.company.gameVault.indoorLevels;
+package com.company.gameLevel.indoorLevels;
 
 import com.company.gameLevel.Level;
 import com.company.gameObjects.GameObject;
-import com.company.gameVault.GameObjects;
-import org.newdawn.slick.Game;
 
 /**
  * Created by evnac on 6/27/2017.
@@ -24,13 +22,27 @@ public class GrandmasHouse extends Level
 	}
 
 	// Ground Floor /////////////////////////////////
-	public class GroundFloor
+	public static class GroundFloor extends Level
 	{
+		public GroundFloor()
+		{
 
+		}
+		@Override
+		protected GameObject[][] InitBackground()
+		{
+			return new GameObject[0][];
+		}
+
+		@Override
+		protected GameObject[][] InitForeground()
+		{
+			return new GameObject[0][];
+		}
 	}
 
 	// Basement  //////////////////////////////////
-	public class Basement
+	public static class Basement
 	{
 
 	}

@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.gameLevel.Level;
-import com.company.gameVault.indoorLevels.GrandmasHouse;
+import com.company.gameLevel.indoorLevels.GrandmasHouse;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.state.BasicGameState;
@@ -36,7 +36,8 @@ public class MainMap extends BasicGameState implements MouseListener
 	@Override
 	public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException
 	{
-		//currentLevel = new GrandmasHouse.Basement();
+
+		currentLevel = new GrandmasHouse.GroundFloor();
 	}
 
 	@Override
