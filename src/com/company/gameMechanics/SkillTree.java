@@ -1,5 +1,6 @@
-package com.company;
+package com.company.gameMechanics;
 
+import com.company.Main;
 import javafx.scene.input.MouseButton;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.*;

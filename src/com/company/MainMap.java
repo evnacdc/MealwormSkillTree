@@ -1,20 +1,13 @@
 package com.company;
 
-import org.lwjgl.input.Mouse;
+import com.company.gameLevel.Level;
+import com.company.gameVault.indoorLevels.GrandmasHouse;
 import org.newdawn.slick.*;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-
-import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.IOException;
+import static com.company.gameMechanics.engine.graphics.DisplayLevel;
 
 /**
  * Created by evnac on 6/25/2017.
@@ -22,12 +15,12 @@ import java.io.IOException;
 public class MainMap extends BasicGameState implements MouseListener
 {
 
-	double offsetX = 0;
-	double offsetY = 0;
+	int offsetX = 0;
+	int offsetY = 0;
 
 	double speed = .2;
 
-	private GameLevel currentLevel;
+	private Level currentLevel;
 
 	public MainMap(int index)
 	{
@@ -43,8 +36,7 @@ public class MainMap extends BasicGameState implements MouseListener
 	@Override
 	public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException
 	{
-		Tiles tiles = new Tiles();
-		currentLevel = new MomsHouse();
+		//currentLevel = new GrandmasHouse.Basement();
 	}
 
 	@Override
@@ -52,7 +44,7 @@ public class MainMap extends BasicGameState implements MouseListener
 	{
 		try
 		{
-			currentLevel.Display(graphics,(int)offsetX,(int)offsetY);
+			DisplayLevel(graphics , offsetX , offsetY,currentLevel);
 		}
 		catch (Exception e)
 		{
