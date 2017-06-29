@@ -1,4 +1,4 @@
-package com.company.gameMechanics;
+package com.company.gameMechanics.progression;
 
 import com.company.Main;
 import javafx.scene.input.MouseButton;

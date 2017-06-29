@@ -1,10 +1,9 @@
 package com.company.gameLevel;
 
-import com.company.gameMechanics.engine.GraphicsEngine;
+import com.company.gameMechanics.engine.DisplayGraphics;
+import com.company.gameMechanics.engine.GenerateGraphics;
 import com.company.gameObjects.GameObject;
 import org.newdawn.slick.Image;
-
-import java.util.Arrays;
 
 /**
  * Created by evnac on 6/27/2017.
@@ -21,7 +20,7 @@ public abstract class Layer
 	public Layer(GameObject[][] objectMap)
 	{
 		this.ObjectMap = objectMap;
-		this.ImageMap = GraphicsEngine.GenerateImageMap(objectMap);
+		this.ImageMap = GenerateGraphics.GenerateImageMap(objectMap);
 	}
 
 	public GameObject[][] GetMap()

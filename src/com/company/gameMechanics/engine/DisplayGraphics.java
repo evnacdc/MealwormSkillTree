@@ -13,7 +13,7 @@ import java.util.Arrays;
 /**
  * Created by evnac on 6/27/2017.
  */
-public class GraphicsEngine
+public class DisplayGraphics
 {
 	/*
 	Given a layer, take the image map, and display it on the screen.
@@ -66,68 +66,5 @@ public class GraphicsEngine
 			// Display Foreground
 			DisplayLayer(g, offsetX, offsetY, level.GetForeground());
 		}
-	}
-
-	public static Image[][] GenerateImageMap(GameObject[][] objectMap)
-	{
-		try
-		{
-			// Return null map if no data exists
-			if(objectMap.length == 0 && objectMap[0] == null)
-			{
-				return null;
-			}
-			// Make image map of same size as Object Map
-			Image[][] imageMap = new Image[objectMap.length][objectMap[0].length];
-
-			// Copy Image data from object map to image map
-			for (int y = 0; y < imageMap.length; y++)
-			{
-				for (int x = 0; x < imageMap.length; x++)
-				{
-					Image currentImage = imageMap[y][x];
-
-					// Only start drawing on empty tile
-					if (currentImage == null)
-					{
-						Image[][] imageToDraw = objectMap[y][x].GetSprite().sprite;
-
-						// Start drawing new sprite onto canvas
-						for (int i = 0; i < imageToDraw.length; i++)
-						{
-							for (int j = 0; j < imageToDraw[0].length; j++)
-							{
-								try
-								{
-									int xCord = x + j;
-									int yCord = y + i;
-
-									// Make sure tile being drawn is within coordinates of canvas
-									if (xCord <= imageMap[0].length && yCord <= imageMap.length)
-									{
-										imageMap[yCord][xCord] = imageToDraw[i][j];
-									}
-								}
-								catch(Exception e)
-								{
-									e.printStackTrace();
-								}
-							}
-						}
-					}
-				}
-			}
-			return imageMap;
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public static void PasteSprite(Image[][] sprite, Image[][] canvas, int startX, int startY)
-	{
-
 	}
 }

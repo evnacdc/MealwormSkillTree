@@ -29,6 +29,8 @@ public class GrandmasHouse extends Level
 		{
 			return new GameObject[][]
 					{{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
+							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
+							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
 							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves}
 
 					};

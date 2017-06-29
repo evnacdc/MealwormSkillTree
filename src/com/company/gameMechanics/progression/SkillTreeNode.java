@@ -1,4 +1,4 @@
-package com.company.gameMechanics;
+package com.company.gameMechanics.progression;
 
 import org.newdawn.slick.Image;
 

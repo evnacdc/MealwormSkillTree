@@ -6,14 +6,12 @@ import com.company.gameSettings.GameConstants;
 import com.company.gameVault.ColorMapVault;
 import com.company.gameVault.GameLevelVault;
 import com.company.gameVault.GameObjectVault;
-import com.sun.javaws.exceptions.ExitException;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
-import sun.security.pkcs11.wrapper.Constants;
 
-import static com.company.gameMechanics.engine.GraphicsEngine.DisplayLevel;
+import static com.company.gameMechanics.engine.DisplayGraphics.DisplayLevel;
 
 /**
  * Created by evnac on 6/25/2017.
@@ -21,10 +19,10 @@ import static com.company.gameMechanics.engine.GraphicsEngine.DisplayLevel;
 public class MainMap extends BasicGameState implements MouseListener
 {
 
-	int offsetX = 0;
-	int offsetY = 0;
+	double offsetX = 0;
+	double offsetY = 0;
 
-	double speed = .2;
+	double speed = .1;
 
 	private Level currentLevel;
 
@@ -64,7 +62,7 @@ public class MainMap extends BasicGameState implements MouseListener
 	{
 		try
 		{
-			DisplayLevel(graphics , offsetX , offsetY,currentLevel);
+			DisplayLevel(graphics , (int)offsetX , (int)offsetY,currentLevel);
 		}
 		catch (Exception e)
 		{

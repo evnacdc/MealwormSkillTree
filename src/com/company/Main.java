@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.gameMechanics.SkillTree;
+import com.company.gameMechanics.progression.SkillTree;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
