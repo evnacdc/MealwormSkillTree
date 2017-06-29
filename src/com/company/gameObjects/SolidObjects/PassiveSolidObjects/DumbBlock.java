@@ -6,10 +6,10 @@ import com.company.gameTile.GameTile;
 /**
  * Created by evnac on 6/27/2017.
  */
-public class DumbBlocks extends SolidObject
+public class DumbBlock extends SolidObject
 {
 
-	public DumbBlocks(GameTile sprite)
+	public DumbBlock(GameTile sprite)
 	{
 		super(sprite);
 	}

@@ -1,8 +1,7 @@
 package com.company.gameTile;
 
-import com.company.gameSettings.config;
+import com.company.gameSettings.Config;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 
 import java.awt.*;
@@ -73,7 +72,7 @@ public class GameTile
 					for (int col = 0; col < this.dimensions.getWidth(); col++)
 					{
 						this.sprite[row][col] = new SpriteSheet(
-								new Image("img/terrain_atlas.png"), config.SPRITE_BLOCK_WIDTH, config.SPRITE_BLOCK_HEIGHT)
+								new Image("img/terrain_atlas.png"), Config.SPRITE_BLOCK_WIDTH, Config.SPRITE_BLOCK_HEIGHT)
 								.getSprite(this.spriteSheetX + col, this.spriteSheetY + row);
 					}
 				}

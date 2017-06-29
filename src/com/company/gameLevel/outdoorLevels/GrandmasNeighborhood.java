@@ -10,14 +10,9 @@ public class GrandmasNeighborhood extends Level
 {
 
 	@Override
-	protected GameObject[][] InitBackground()
+	protected GameObject[][] CreateObjectMap()
 	{
 		return new GameObject[0][];
 	}
 
-	@Override
-	protected GameObject[][] InitForeground()
-	{
-		return new GameObject[0][];
-	}
 }

@@ -11,11 +11,11 @@ public abstract class Level
 	private BackgroundLayer Background;
 	private ForegroundLayer Foreground;
 
-	protected abstract GameObject[][] InitBackground();
-	protected abstract GameObject[][] InitForeground();
+	protected abstract GameObject[][] CreateObjectMap();
 
 	public Level()
 	{
+		this.Background = new BackgroundLayer(CreateObjectMap());
 
 	}
 
@@ -23,7 +23,6 @@ public abstract class Level
 	{
 		return Background;
 	}
-
 	public ForegroundLayer GetForeground()
 	{
 		return Foreground;

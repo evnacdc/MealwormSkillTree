@@ -9,6 +9,7 @@ public abstract class GameObject
 {
 	private GameTile Sprite;
 
+
 	public GameTile GetSprite()
 	{
 		return this.Sprite;

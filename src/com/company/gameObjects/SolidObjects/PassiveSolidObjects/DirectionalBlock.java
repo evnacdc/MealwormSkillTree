@@ -6,9 +6,9 @@ import com.company.gameTile.GameTile;
 /**
  * Created by evnac on 6/27/2017.
  */
-public abstract class DirectionalBlocks extends SolidObject
+public class DirectionalBlock extends SolidObject
 {
-	public DirectionalBlocks(GameTile sprite)
+	public DirectionalBlock(GameTile sprite)
 	{
 		super(sprite);
 	}

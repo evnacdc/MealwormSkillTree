@@ -1,5 +1,6 @@
 package com.company.gameLevel;
 
+import com.company.gameMechanics.engine.GraphicsEngine;
 import com.company.gameObjects.GameObject;
 import org.newdawn.slick.Image;
 
@@ -20,8 +21,7 @@ public abstract class Layer
 	public Layer(GameObject[][] objectMap)
 	{
 		this.ObjectMap = objectMap;
-
-		this.ImageMap = GenerateImageMap(objectMap);
+		this.ImageMap = GraphicsEngine.GenerateImageMap(objectMap);
 	}
 
 	public GameObject[][] GetMap()
@@ -34,44 +34,4 @@ public abstract class Layer
 		return this.ImageMap;
 	}
 
-	public Image[][] GenerateImageMap(GameObject[][] objectMap)
-	{
-		// Make image map of same size as Object Map
-		Image[][] imageMap = new Image[objectMap[0].length][objectMap.length];
-
-		// Init array to null. Null values are assumed to be unfilled spaces.
-		Arrays.fill(imageMap,null);
-
-		// Copy Image data from object map to image map
-		for(int y=0; y<imageMap[0].length; y++)
-		{
-			for(int x=0; x<imageMap.length; x++)
-			{
-				Image currentImage = imageMap[y][x];
-
-				// Only start drawing on empty tile
-				if( currentImage == null)
-				{
-					GameObject currentObject = objectMap[y][x];
-					PasteSprite(currentObject.GetSprite().sprite,imageMap,x,y);
-				}
-			}
-		}
-
-		return null;
-	}
-
-	public void PasteSprite(Image[][] sprite, Image[][] canvas, int startX, int startY)
-	{
-		for(int i=0; i<sprite[0].length; i++)
-		{
-			for (int j = 0; j < sprite.length; j++)
-			{
-				int xCord = startX + j;
-				int yCord = startY + i;
-
-				canvas[yCord][xCord] = sprite[i][j];
-			}
-		}
-	}
 }

@@ -7,7 +7,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-import static com.company.gameMechanics.engine.graphics.DisplayLevel;
+import static com.company.gameMechanics.engine.GraphicsEngine.DisplayLevel;
 
 /**
  * Created by evnac on 6/25/2017.
