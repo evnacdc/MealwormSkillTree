@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.gameMechanics.progression.SkillTree;
+import com.company.gameUtilities.FileIO;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
@@ -17,6 +18,8 @@ public class Main extends StateBasedGame {
         super(gameName);
         this.addState(new SkillTree(skillTreeIndex));
         this.addState(new MainMap(mainMapIndex));
+
+        FileIO.GetRgbValueFromImage();
     }
 
     public static void main(String[] args) {

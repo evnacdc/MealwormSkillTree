@@ -40,7 +40,6 @@ public class MainMap extends BasicGameState implements MouseListener
 	@Override
 	public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException
 	{
-
 		try
 		{
 			new GameConstants();
