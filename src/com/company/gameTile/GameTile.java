@@ -72,7 +72,7 @@ public class GameTile
 					for (int col = 0; col < this.dimensions.getWidth(); col++)
 					{
 						this.sprite[row][col] = new SpriteSheet(
-								new Image("img/terrain_atlas.png"), Config.SPRITE_BLOCK_WIDTH, Config.SPRITE_BLOCK_HEIGHT)
+								new Image(this.FileName), Config.SPRITE_BLOCK_WIDTH, Config.SPRITE_BLOCK_HEIGHT)
 								.getSprite(this.spriteSheetX + col, this.spriteSheetY + row);
 					}
 				}

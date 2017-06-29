@@ -23,6 +23,16 @@ public class GraphicsEngine
 		// Get image map from layer
 		Image[][] map = layer.GetImageMap();
 
+		// Exit if map is null or empty
+		if(map == null)
+		{
+			return;
+		}
+		if(map.length == 0 && map[0].length == 0)
+		{
+			return;
+		}
+
 		// Iterate across columns
 		for(int col=0; col < map[0].length; col++)
 		{
@@ -45,44 +55,74 @@ public class GraphicsEngine
 
 	public static void DisplayLevel(org.newdawn.slick.Graphics g, int offsetX, int offsetY, Level level)
 	{
-		// Display Background
-		DisplayLayer(g,offsetX,offsetY,level.GetBackground());
+		if(level.GetBackground() != null)
+		{
+			// Display Background
+			DisplayLayer(g, offsetX, offsetY, level.GetBackground());
+		}
 
-		// Display Foreground
-		DisplayLayer(g,offsetX,offsetY,level.GetForeground());
+		if(level.GetForeground() != null)
+		{
+			// Display Foreground
+			DisplayLayer(g, offsetX, offsetY, level.GetForeground());
+		}
 	}
 
 	public static Image[][] GenerateImageMap(GameObject[][] objectMap)
 	{
-		// Make image map of same size as Object Map
-		Image[][] imageMap = new Image[objectMap.length][objectMap[0].length];
-
-		// Copy Image data from object map to image map
-		for(int y=0; y<imageMap.length; y++)
+		try
 		{
-			for(int x=0; x<imageMap.length; x++)
+			// Return null map if no data exists
+			if(objectMap.length == 0 && objectMap[0] == null)
 			{
-				Image currentImage = imageMap[y][x];
+				return null;
+			}
+			// Make image map of same size as Object Map
+			Image[][] imageMap = new Image[objectMap.length][objectMap[0].length];
 
-				// Only start drawing on empty tile
-				if( currentImage == null)
+			// Copy Image data from object map to image map
+			for (int y = 0; y < imageMap.length; y++)
+			{
+				for (int x = 0; x < imageMap.length; x++)
 				{
-					Image[][] imageToDraw = objectMap[y][x].GetSprite().sprite;
+					Image currentImage = imageMap[y][x];
 
-					for(int i=0; i<imageToDraw[0].length; i++)
+					// Only start drawing on empty tile
+					if (currentImage == null)
 					{
-						for (int j = 0; j < imageToDraw.length; j++)
-						{
-							int xCord = x + j;
-							int yCord = y + i;
+						Image[][] imageToDraw = objectMap[y][x].GetSprite().sprite;
 
-							imageMap[yCord][xCord] = imageToDraw[i][j];
+						// Start drawing new sprite onto canvas
+						for (int i = 0; i < imageToDraw.length; i++)
+						{
+							for (int j = 0; j < imageToDraw[0].length; j++)
+							{
+								try
+								{
+									int xCord = x + j;
+									int yCord = y + i;
+
+									// Make sure tile being drawn is within coordinates of canvas
+									if (xCord <= imageMap[0].length && yCord <= imageMap.length)
+									{
+										imageMap[yCord][xCord] = imageToDraw[i][j];
+									}
+								}
+								catch(Exception e)
+								{
+									e.printStackTrace();
+								}
+							}
 						}
 					}
 				}
 			}
+			return imageMap;
 		}
-
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		return null;
 	}
 

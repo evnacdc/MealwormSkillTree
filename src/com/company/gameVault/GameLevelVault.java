@@ -18,7 +18,6 @@ public class GameLevelVault
 	///////////////////////////////////////////////////////////////////////////////
 
 	// Grandmas House
-	public static GrandmasHouse GrandmasHouse = new GrandmasHouse();
-	public static GrandmasHouse.Basement GrandmasBasement = new GrandmasHouse.Basement();
+	public static GrandmasHouse.GroundFloor GrandmasGroundFloor = new GrandmasHouse.GroundFloor();
 
 }

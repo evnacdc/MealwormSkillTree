@@ -2,10 +2,16 @@ package com.company;
 
 import com.company.gameLevel.Level;
 import com.company.gameLevel.indoorLevels.GrandmasHouse;
+import com.company.gameSettings.GameConstants;
+import com.company.gameVault.ColorMapVault;
+import com.company.gameVault.GameLevelVault;
+import com.company.gameVault.GameObjectVault;
+import com.sun.javaws.exceptions.ExitException;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import sun.security.pkcs11.wrapper.Constants;
 
 import static com.company.gameMechanics.engine.GraphicsEngine.DisplayLevel;
 
@@ -36,6 +42,19 @@ public class MainMap extends BasicGameState implements MouseListener
 	@Override
 	public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException
 	{
+
+		try
+		{
+			new GameConstants();
+			new GameObjectVault();
+			new GameLevelVault();
+			new ColorMapVault();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Error loading resources...\n\n" + e.toString());
+			System.exit(1);
+		}
 
 		currentLevel = new GrandmasHouse.GroundFloor();
 	}

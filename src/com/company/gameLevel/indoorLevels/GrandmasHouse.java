@@ -28,13 +28,9 @@ public class GrandmasHouse extends Level
 		protected GameObject[][] CreateObjectMap()
 		{
 			return new GameObject[][]
-					{{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves}
+					{{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
+							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves}
+
 					};
 		}
 
