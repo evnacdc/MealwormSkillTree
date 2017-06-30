@@ -23,10 +23,13 @@ public class GameObjectVault
 	{
 		try
 		{
+
+
 			GrassPatchWholeWithMostLeaves = new BackgroundObject(new GameTile(21, 5, GameConstants.FilePaths.SpriteSheets.TERRAIN));
 			DarkMudPillar = new BackgroundObject(new GameTile(0, 0, 3, 5,GameConstants.FilePaths.SpriteSheets.BUILD) );
 
 			StairCaseMiddle = new DirectionalBlock(new GameTile(15, 19, GameConstants.FilePaths.SpriteSheets.BUILD));
+
 		}
 		catch(Exception e)
 		{

@@ -26,14 +26,12 @@ public class GenerateGraphics
 			// Copy Image data from object map to image map
 			for (int y = 0; y < imageMap.length; y++)
 			{
-				for (int x = 0; x < imageMap[0].length; x++)
-				{
+				for (int x = 0; x < imageMap[0].length; x++){
 					// The image we're currently creating
 					Image currentImage = imageMap[y][x];
 
 					// Only start drawing on empty tile
-					if (currentImage == null)
-					{
+					if (currentImage == null){
 						Image[][] imageToDraw = objectMap[y][x].GetSprite().sprite;
 
 						// Start drawing new sprite onto canvas

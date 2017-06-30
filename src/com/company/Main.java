@@ -19,7 +19,7 @@ public class Main extends StateBasedGame {
         this.addState(new SkillTree(skillTreeIndex));
         this.addState(new MainMap(mainMapIndex));
 
-        FileIO.GetRgbValueFromImage();
+        FileIO.GetRgbArrayFromImage();
     }
 
     public static void main(String[] args) {
