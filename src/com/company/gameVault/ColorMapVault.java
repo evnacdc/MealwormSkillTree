@@ -4,6 +4,7 @@ import com.company.gameObjects.GameObject;
 import com.company.gameTile.RGB;
 import sun.awt.image.PixelConverter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -11,25 +12,57 @@ import java.util.HashMap;
  */
 public class ColorMapVault
 {
-	public static HashMap<RGB,GameObject> ColorMap;
+	private static ArrayList<ColorObjectPair> ColorMap;
 
 	public ColorMapVault()
 	{
-		this.ColorMap = new HashMap<>(1000);
+		this.ColorMap = new ArrayList<ColorObjectPair>();
 		AddMappings();
 	}
 
 	private void AddMappings()
 	{
-		ColorMap.put(new RGB(1,3,5), GameObjectVault.GrassPatchWholeWithMostLeaves);
-		ColorMap.put(new RGB(15,79,34),GameObjectVault.Tree1);
-		ColorMap.put(new RGB(103,65,44),GameObjectVault.Tree1Stump);
-		ColorMap.put(new RGB(63,72,204),GameObjectVault.StairCaseTop);
-		ColorMap.put(new RGB(101,109,214),GameObjectVault.StairCaseMiddle);
-		ColorMap.put(new RGB(153,158,227),GameObjectVault.StairCaseBottom);
-		ColorMap.put(new RGB(101,109,214),GameObjectVault.Door1);
-		ColorMap.put(new RGB(127,127,127),GameObjectVault.StoneWalkWay1);
-
+		Add(1,3,5, GameObjectVault.GrassPatchWholeWithMostLeaves);
+		Add(15,79,34,GameObjectVault.Tree1);
+		Add(103,65,44,GameObjectVault.Tree1Stump);
+		Add(63,72,204,GameObjectVault.StairCaseTop);
+		Add(101,109,214,GameObjectVault.StairCaseMiddle);
+		Add(153,158,227,GameObjectVault.StairCaseBottom);
+		Add(101,109,214,GameObjectVault.Door1);
+		Add(127,127,127,GameObjectVault.StoneWalkWay1);
 	}
 
+	private void Add(int red, int green, int blue, GameObject obj)
+	{
+		ColorMap.add(new ColorObjectPair(RGB.ToInt(red,green,blue),obj));
+	}
+
+	public static GameObject Get(int r, int g, int b)
+	{
+		 return ColorMapVault.Get(RGB.ToInt(r,g,b));
+	}
+
+	public static GameObject Get(int rgbInt)
+	{
+		for(ColorObjectPair pair: ColorMap)
+		{
+			if(pair.Color == rgbInt )
+			{
+				return pair.Object;
+			}
+		}
+		return GameObjectVault.DevTexture;
+	}
+
+	private class ColorObjectPair
+	{
+		int Color;
+		GameObject Object;
+
+		public ColorObjectPair(int color, GameObject obj)
+		{
+			this.Color = color;
+			this.Object = obj;
+		}
+	}
 }

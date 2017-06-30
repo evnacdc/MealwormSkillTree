@@ -25,7 +25,7 @@ public class GameObjectVault
 	public static BackgroundObject DarkMudPillar;
 	public static BackgroundObject Tree1;
 	public static BackgroundObject StoneWalkWay1;
-
+	public static BackgroundObject DevTexture;
 
 	// Direction Objects
 	public static DirectionalBlock StairCaseTop;
@@ -40,9 +40,8 @@ public class GameObjectVault
 			//Transport Objects
 			Door1 = new TransportBlock(new GameTile(5, 9, 2, 1, GameConstants.FilePaths.SpriteSheets.BASE));
 
-
 			// Dumb Game Objects
-			Tree1Stump = new DumbBlock(new GameTile(15, 19, 3, 3, GameConstants.FilePaths.SpriteSheets.BASE));
+			Tree1Stump = new DumbBlock(new GameTile(28, 19, 3, 3, GameConstants.FilePaths.SpriteSheets.BASE));
 			RiverMiddleContinous = new DumbBlock(new GameTile(21, 14, 1, 3, GameConstants.FilePaths.SpriteSheets.BASE));
 
 			// Background Objects
@@ -50,12 +49,13 @@ public class GameObjectVault
 			DarkMudPillar = new BackgroundObject(new GameTile(0, 0, 3, 5,GameConstants.FilePaths.SpriteSheets.BUILD) ); //**This is a piller and should be a dumb block..?
 			Tree1 = new BackgroundObject(new GameTile(24, 15, 3, 3,GameConstants.FilePaths.SpriteSheets.BASE));
 			StoneWalkWay1 = new BackgroundObject(new GameTile(30, 26, GameConstants.FilePaths.SpriteSheets.BASE));
+			DevTexture = new BackgroundObject(new GameTile("img/singleTiles/DevTexture.png"));
 
 			// Direction Objects
 			StairCaseTop = new DirectionalBlock(new GameTile(15, 18, GameConstants.FilePaths.SpriteSheets.BASE));
-			StairCaseMiddle = new DirectionalBlock(new GameTile(15, 19, GameConstants.FilePaths.SpriteSheets.BUILD));
+			StairCaseMiddle = new DirectionalBlock(new GameTile(15, 19, GameConstants.FilePaths.SpriteSheets.BASE));
 			StairCaseBottom = new DirectionalBlock(new GameTile(15, 20, GameConstants.FilePaths.SpriteSheets.BASE));
-			BridgeWithNiceRailing = new DirectionalBlock(new GameTile(16, 16, GameConstants.FilePaths.SpriteSheets.BASE));
+			BridgeWithNiceRailing = new DirectionalBlock(new GameTile(16, 16, 3,3, GameConstants.FilePaths.SpriteSheets.BASE));
 
 		}
 		catch(Exception e)

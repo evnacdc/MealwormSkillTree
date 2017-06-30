@@ -16,7 +16,6 @@ public abstract class Level
 	public Level()
 	{
 		this.Background = new BackgroundLayer(CreateObjectMap());
-
 	}
 
 	public BackgroundLayer GetBackground()

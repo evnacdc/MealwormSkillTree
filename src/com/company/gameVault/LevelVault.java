@@ -5,7 +5,7 @@ import com.company.gameLevel.indoorLevels.GrandmasHouse;
 /**
  * Created by evnac on 6/28/2017.
  */
-public class GameLevelVault
+public class LevelVault
 {
 	///////////////////////////////////////////////////////////////////////////////
 	// Outdoor Levels
@@ -19,5 +19,6 @@ public class GameLevelVault
 
 	// Grandmas House
 	public static GrandmasHouse.GroundFloor GrandmasGroundFloor = new GrandmasHouse.GroundFloor();
+	public static GrandmasHouse.Basement GrandmasBasement = new GrandmasHouse.Basement();
 
 }

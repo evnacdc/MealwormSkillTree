@@ -33,6 +33,11 @@ public class GameTile
 		return this.dimensions;
 	}
 
+	public GameTile(String fileName)
+	{
+		this(0,0, fileName);
+	}
+
 	// make singe sized block
 	public GameTile(int spriteX, int spriteY, String fileName)
 	{

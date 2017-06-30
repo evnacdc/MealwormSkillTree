@@ -2,6 +2,7 @@ package com.company.gameLevel.indoorLevels;
 
 import com.company.gameLevel.Level;
 import com.company.gameObjects.GameObject;
+import com.company.gameUtilities.FileIO;
 import com.company.gameVault.GameObjectVault;
 
 /**
@@ -20,27 +21,27 @@ public class GrandmasHouse extends Level
 	// Ground Floor /////////////////////////////////
 	public static class GroundFloor extends Level
 	{
-		public GroundFloor()
-		{
-			super();
-		}
 		@Override
 		protected GameObject[][] CreateObjectMap()
 		{
 			return new GameObject[][]
-					{{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves},
-							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.GrassPatchWholeWithMostLeaves}
+					{{GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing},
+							{GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing},
+							{GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing},
+							{GameObjectVault.GrassPatchWholeWithMostLeaves,GameObjectVault.StairCaseBottom,GameObjectVault.GrassPatchWholeWithMostLeaves}
 
 					};
 		}
-
 	}
 
 	// Basement  //////////////////////////////////
-	public static class Basement
+	public static class Basement extends Level
 	{
 
+		@Override
+		protected GameObject[][] CreateObjectMap()
+		{
+			return FileIO.GetObjectArrayFromImage("img/maps/New Piskel.png");
+		}
 	}
 }

@@ -4,7 +4,7 @@ import com.company.gameLevel.Level;
 import com.company.gameLevel.indoorLevels.GrandmasHouse;
 import com.company.gameSettings.GameConstants;
 import com.company.gameVault.ColorMapVault;
-import com.company.gameVault.GameLevelVault;
+import com.company.gameVault.LevelVault;
 import com.company.gameVault.GameObjectVault;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
@@ -44,8 +44,9 @@ public class MainMap extends BasicGameState implements MouseListener
 		{
 			new GameConstants();
 			new GameObjectVault();
-			new GameLevelVault();
 			new ColorMapVault();
+			new LevelVault();
+
 		}
 		catch(Exception e)
 		{
@@ -53,7 +54,7 @@ public class MainMap extends BasicGameState implements MouseListener
 			System.exit(1);
 		}
 
-		currentLevel = new GrandmasHouse.GroundFloor();
+		currentLevel = new GrandmasHouse.Basement();
 	}
 
 	@Override
