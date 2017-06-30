@@ -6,10 +6,11 @@ import com.company.gameTile.GameTile;
 /**
  * Created by evnac on 6/27/2017.
  */
-public class TransportBlocks extends SolidObject
+public class TransportBlock extends SolidObject
 {
-	public TransportBlocks(GameTile sprite)
+	public TransportBlock(GameTile sprite)
 	{
 		super(sprite);
 	}
 }
+

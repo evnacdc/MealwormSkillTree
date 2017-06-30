@@ -1,7 +1,9 @@
 package com.company.gameVault;
 
 import com.company.gameObjects.BackgroundObjects.BackgroundObject;
+import com.company.gameObjects.SolidObjects.ActiveSolidObjects.TransportBlock;
 import com.company.gameObjects.SolidObjects.PassiveSolidObjects.DirectionalBlock;
+import com.company.gameObjects.SolidObjects.PassiveSolidObjects.DumbBlock;
 import com.company.gameSettings.GameConstants;
 import com.company.gameTile.GameTile;
 
@@ -10,25 +12,50 @@ import com.company.gameTile.GameTile;
  */
 public class GameObjectVault
 {
-	// Static Game Objects
+	 //TransportObjects
+	public static TransportBlock Door1;
+
+
+	// Dumb Objects
+	public static DumbBlock Tree1Stump;
+	public static DumbBlock RiverMiddleContinous; //This needs to be broken up in the future
 
 	// Background Objects
 	public static BackgroundObject GrassPatchWholeWithMostLeaves;
 	public static BackgroundObject DarkMudPillar;
+	public static BackgroundObject Tree1;
+	public static BackgroundObject StoneWalkWay1;
+
 
 	// Direction Objects
+	public static DirectionalBlock StairCaseTop;
 	public static DirectionalBlock StairCaseMiddle;
+	public static DirectionalBlock StairCaseBottom;
+	public static DirectionalBlock BridgeWithNiceRailing;
 
 	public GameObjectVault() throws Exception
 	{
 		try
 		{
+			//Transport Objects
+			Door1 = new TransportBlock(new GameTile(5, 9, 2, 1, GameConstants.FilePaths.SpriteSheets.BASE));
 
 
+			// Dumb Game Objects
+			Tree1Stump = new DumbBlock(new GameTile(15, 19, 3, 3, GameConstants.FilePaths.SpriteSheets.BASE));
+			RiverMiddleContinous = new DumbBlock(new GameTile(21, 14, 1, 3, GameConstants.FilePaths.SpriteSheets.BASE));
+
+			// Background Objects
 			GrassPatchWholeWithMostLeaves = new BackgroundObject(new GameTile(21, 5, GameConstants.FilePaths.SpriteSheets.TERRAIN));
-			DarkMudPillar = new BackgroundObject(new GameTile(0, 0, 3, 5,GameConstants.FilePaths.SpriteSheets.BUILD) );
+			DarkMudPillar = new BackgroundObject(new GameTile(0, 0, 3, 5,GameConstants.FilePaths.SpriteSheets.BUILD) ); //**This is a piller and should be a dumb block..?
+			Tree1 = new BackgroundObject(new GameTile(24, 15, 3, 3,GameConstants.FilePaths.SpriteSheets.BASE));
+			StoneWalkWay1 = new BackgroundObject(new GameTile(30, 26, GameConstants.FilePaths.SpriteSheets.BASE));
 
+			// Direction Objects
+			StairCaseTop = new DirectionalBlock(new GameTile(15, 18, GameConstants.FilePaths.SpriteSheets.BASE));
 			StairCaseMiddle = new DirectionalBlock(new GameTile(15, 19, GameConstants.FilePaths.SpriteSheets.BUILD));
+			StairCaseBottom = new DirectionalBlock(new GameTile(15, 20, GameConstants.FilePaths.SpriteSheets.BASE));
+			BridgeWithNiceRailing = new DirectionalBlock(new GameTile(16, 16, GameConstants.FilePaths.SpriteSheets.BASE));
 
 		}
 		catch(Exception e)
