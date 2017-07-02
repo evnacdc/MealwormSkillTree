@@ -13,4 +13,6 @@ public class BackgroundLayer extends Layer
 	{
 		super(objectMap);
 	}
+
+
 }

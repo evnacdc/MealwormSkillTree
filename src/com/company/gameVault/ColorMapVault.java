@@ -4,6 +4,7 @@ import com.company.gameObjects.GameObject;
 import com.company.gameTile.RGB;
 import sun.awt.image.PixelConverter;
 
+import java.nio.channels.GatheringByteChannel;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,6 +23,9 @@ public class ColorMapVault
 
 	private void AddMappings()
 	{
+		// Transparent block
+		Add( 0, null);
+
 		Add(1,3,5, GameObjectVault.GrassPatchWholeWithMostLeaves);
 		Add(15,79,34,GameObjectVault.Tree1);
 		Add(103,65,44,GameObjectVault.Tree1Stump);
@@ -35,6 +39,11 @@ public class ColorMapVault
 	private void Add(int red, int green, int blue, GameObject obj)
 	{
 		ColorMap.add(new ColorObjectPair(RGB.ToInt(red,green,blue),obj));
+	}
+
+	private void Add(int rgb, GameObject obj)
+	{
+		ColorMap.add(new ColorObjectPair(rgb,obj));
 	}
 
 	public static GameObject Get(int r, int g, int b)

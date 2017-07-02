@@ -8,21 +8,14 @@ import com.company.gameVault.GameObjectVault;
 /**
  * Created by evnac on 6/27/2017.
  */
-public class GrandmasHouse extends Level
+public class GrandmasHouse
 {
-
-	@Override
-	protected GameObject[][] CreateObjectMap()
-	{
-		return new GameObject[0][];
-	}
-
 
 	// Ground Floor /////////////////////////////////
 	public static class GroundFloor extends Level
 	{
 		@Override
-		protected GameObject[][] CreateObjectMap()
+		protected GameObject[][] CreateBackground()
 		{
 			return new GameObject[][]
 					{{GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing,GameObjectVault.BridgeWithNiceRailing},
@@ -32,6 +25,12 @@ public class GrandmasHouse extends Level
 
 					};
 		}
+
+		@Override
+		protected GameObject[][] CreateForeground()
+		{
+			return new GameObject[0][];
+		}
 	}
 
 	// Basement  //////////////////////////////////
@@ -39,9 +38,15 @@ public class GrandmasHouse extends Level
 	{
 
 		@Override
-		protected GameObject[][] CreateObjectMap()
+		protected GameObject[][] CreateBackground()
 		{
 			return FileIO.GetObjectArrayFromImage("img/maps/New Piskel.png");
+		}
+
+		@Override
+		protected GameObject[][] CreateForeground()
+		{
+			return FileIO.GetObjectArrayFromImage("img/maps/foreground.png");
 		}
 	}
 }

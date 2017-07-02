@@ -6,13 +6,8 @@ import com.company.gameObjects.GameObject;
 /**
  * Created by evnac on 6/27/2017.
  */
-public class GrandmasNeighborhood extends Level
+public class GrandmasNeighborhood
 {
 
-	@Override
-	protected GameObject[][] CreateObjectMap()
-	{
-		return new GameObject[0][];
-	}
 
 }

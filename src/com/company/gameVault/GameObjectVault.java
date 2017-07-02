@@ -1,6 +1,7 @@
 package com.company.gameVault;
 
 import com.company.gameObjects.BackgroundObjects.BackgroundObject;
+import com.company.gameObjects.Player;
 import com.company.gameObjects.SolidObjects.ActiveSolidObjects.TransportBlock;
 import com.company.gameObjects.SolidObjects.PassiveSolidObjects.DirectionalBlock;
 import com.company.gameObjects.SolidObjects.PassiveSolidObjects.DumbBlock;
@@ -12,9 +13,11 @@ import com.company.gameTile.GameTile;
  */
 public class GameObjectVault
 {
+
+	public static Player Player1;
+
 	 //TransportObjects
 	public static TransportBlock Door1;
-
 
 	// Dumb Objects
 	public static DumbBlock Tree1Stump;
@@ -37,6 +40,8 @@ public class GameObjectVault
 	{
 		try
 		{
+			Player1 = new Player(new GameTile("img/singleTiles/DevTexture.png"));
+
 			//Transport Objects
 			Door1 = new TransportBlock(new GameTile(5, 9, 2, 1, GameConstants.FilePaths.SpriteSheets.BASE));
 

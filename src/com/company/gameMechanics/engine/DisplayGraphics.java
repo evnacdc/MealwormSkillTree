@@ -53,6 +53,11 @@ public class DisplayGraphics
 		}
 	}
 
+	public static void DisplayPlayer()
+	{
+
+	}
+
 	public static void DisplayLevel(org.newdawn.slick.Graphics g, int offsetX, int offsetY, Level level)
 	{
 		if(level.GetBackground() != null)
