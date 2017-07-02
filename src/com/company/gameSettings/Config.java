@@ -6,6 +6,6 @@ package com.company.gameSettings;
 public class Config
 {
 
-
+	public static boolean DevMode = true;
 
 }

@@ -7,6 +7,7 @@ import com.company.gameObjects.Player;
 import com.company.gameSettings.Config;
 import com.company.gameSettings.GameConstants;
 import com.company.gameTile.GameTile;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 
@@ -50,6 +51,39 @@ public class DisplayGraphics
 					int y =  row * GameConstants.SPRITE_BLOCK_HEIGHT + (int)player.OffsetY;
 
 					g.drawImage(currentTile,x,y);
+
+				}
+			}
+		}
+	}
+
+	public static void ShowGridlines(Level level, Graphics g)
+	{
+		if(level.GetBackground().GetMap() != null)
+		{
+			int rows = level.GetBackground().GetMap().length;
+			int cols = level.GetBackground().GetMap()[0].length;
+			int height = rows * GameConstants.SPRITE_BLOCK_HEIGHT;
+			int width = cols * GameConstants.SPRITE_BLOCK_WIDTH;
+			int xOffset = (int)Player.OffsetX;
+			int yOffset = (int) Player.OffsetY;
+
+			g.setColor(Color.darkGray);
+
+			for (int row = 0; row < rows; row++)
+			{
+				g.drawLine(xOffset, row * GameConstants.SPRITE_BLOCK_HEIGHT + yOffset, width + xOffset, row * GameConstants.SPRITE_BLOCK_HEIGHT + yOffset);
+				if(row%2 == 0)
+				{
+					g.drawString(String.format("%s",row),2, row * GameConstants.SPRITE_BLOCK_HEIGHT + yOffset);
+				}
+			}
+			for (int col = 0; col < cols; col++)
+			{
+				g.drawLine(col * GameConstants.SPRITE_BLOCK_WIDTH + xOffset, yOffset, col * GameConstants.SPRITE_BLOCK_WIDTH + xOffset , height + yOffset);
+				if(col%2==0 && col!= 0)
+				{
+					g.drawString(String.format("%s",col),GameConstants.SPRITE_BLOCK_WIDTH*col + xOffset ,2);
 				}
 			}
 		}
@@ -75,5 +109,10 @@ public class DisplayGraphics
 		}
 
 		DisplayPlayer(player,g);
+
+		if(Config.DevMode)
+		{
+			ShowGridlines(level,g);
+		}
 	}
 }

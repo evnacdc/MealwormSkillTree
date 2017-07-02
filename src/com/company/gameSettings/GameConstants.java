@@ -23,5 +23,4 @@ public class GameConstants
 			public static final String BUILD = gameTileFolder + "build_atlas.png";
 		}
 	}
-
 }
