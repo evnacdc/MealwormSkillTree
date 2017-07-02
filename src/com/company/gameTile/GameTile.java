@@ -1,6 +1,7 @@
 package com.company.gameTile;
 
 import com.company.gameSettings.Config;
+import com.company.gameSettings.GameConstants;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SpriteSheet;
 
@@ -77,7 +78,7 @@ public class GameTile
 					for (int col = 0; col < this.dimensions.getWidth(); col++)
 					{
 						this.sprite[row][col] = new SpriteSheet(
-								new Image(this.FileName), Config.SPRITE_BLOCK_WIDTH, Config.SPRITE_BLOCK_HEIGHT)
+								new Image(this.FileName), GameConstants.SPRITE_BLOCK_WIDTH, GameConstants.SPRITE_BLOCK_HEIGHT)
 								.getSprite(this.spriteSheetX + col, this.spriteSheetY + row);
 					}
 				}

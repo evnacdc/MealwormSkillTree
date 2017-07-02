@@ -6,6 +6,11 @@ package com.company.gameSettings;
 public class GameConstants
 {
 
+	public static final int SPRITE_BLOCK_WIDTH = 32;
+	public static final int SPRITE_BLOCK_HEIGHT = 32;
+
+	public static double PLAYER_WALK_SPEED = .25/2;
+
 	public static class FilePaths
 	{
 		public static final String gameTileFolder = "img/spriteGrids/gameTile/";

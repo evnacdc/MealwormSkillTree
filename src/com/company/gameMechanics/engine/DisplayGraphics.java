@@ -3,7 +3,9 @@ package com.company.gameMechanics.engine;
 import com.company.gameLevel.Layer;
 import com.company.gameLevel.Level;
 import com.company.gameObjects.GameObject;
+import com.company.gameObjects.Player;
 import com.company.gameSettings.Config;
+import com.company.gameSettings.GameConstants;
 import com.company.gameTile.GameTile;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -18,7 +20,7 @@ public class DisplayGraphics
 	/*
 	Given a layer, take the image map, and display it on the screen.
 	 */
-	public static void DisplayLayer(org.newdawn.slick.Graphics g, int offsetX, int offsetY, Layer layer)
+	public static void DisplayLayer(org.newdawn.slick.Graphics g, Player player, Layer layer)
 	{
 		// Get image map from layer
 		Image[][] map = layer.GetImageMap();
@@ -44,8 +46,8 @@ public class DisplayGraphics
 
 				if(currentTile != null)
 				{
-					int x = col * Config.SPRITE_BLOCK_WIDTH + offsetX;
-					int y =  row * Config.SPRITE_BLOCK_HEIGHT + offsetY;
+					int x = col * GameConstants.SPRITE_BLOCK_WIDTH + (int)player.OffsetX;
+					int y =  row * GameConstants.SPRITE_BLOCK_HEIGHT + (int)player.OffsetY;
 
 					g.drawImage(currentTile,x,y);
 				}
@@ -53,23 +55,25 @@ public class DisplayGraphics
 		}
 	}
 
-	public static void DisplayPlayer()
+	public static void DisplayPlayer(Player player, Graphics g)
 	{
-
+		g.drawImage(player.GetSprite().sprite[0][0],GameConstants.SPRITE_BLOCK_WIDTH * 13, GameConstants.SPRITE_BLOCK_HEIGHT * 8);
 	}
 
-	public static void DisplayLevel(org.newdawn.slick.Graphics g, int offsetX, int offsetY, Level level)
+	public static void DisplayLevel(org.newdawn.slick.Graphics g, Player player, Level level)
 	{
 		if(level.GetBackground() != null)
 		{
 			// Display Background
-			DisplayLayer(g, offsetX, offsetY, level.GetBackground());
+			DisplayLayer(g,player, level.GetBackground());
 		}
 
 		if(level.GetForeground() != null)
 		{
 			// Display Foreground
-			DisplayLayer(g, offsetX, offsetY, level.GetForeground());
+			DisplayLayer(g, player, level.GetForeground());
 		}
+
+		DisplayPlayer(player,g);
 	}
 }

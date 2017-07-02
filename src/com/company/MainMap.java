@@ -2,6 +2,8 @@ package com.company;
 
 import com.company.gameLevel.Level;
 import com.company.gameLevel.indoorLevels.GrandmasHouse;
+import com.company.gameMechanics.engine.PlayerMechanics;
+import com.company.gameObjects.Player;
 import com.company.gameSettings.GameConstants;
 import com.company.gameVault.ColorMapVault;
 import com.company.gameVault.LevelVault;
@@ -26,6 +28,8 @@ public class MainMap extends BasicGameState implements MouseListener
 
 	private Level currentLevel;
 
+	private static Player Player1;
+
 	public MainMap(int index)
 	{
 
@@ -47,14 +51,15 @@ public class MainMap extends BasicGameState implements MouseListener
 			new ColorMapVault();
 			new LevelVault();
 
+			Player1 = GameObjectVault.Player1;
+			currentLevel = new GrandmasHouse.Basement();
+			Player1.NewMap(currentLevel,10,10);
 		}
 		catch(Exception e)
 		{
 			System.out.println("Error loading resources...\n\n" + e.toString());
 			System.exit(1);
 		}
-
-		currentLevel = new GrandmasHouse.Basement();
 	}
 
 	@Override
@@ -62,7 +67,7 @@ public class MainMap extends BasicGameState implements MouseListener
 	{
 		try
 		{
-			DisplayLevel(graphics , (int)offsetX , (int)offsetY,currentLevel);
+			DisplayLevel(graphics , GameObjectVault.Player1 ,currentLevel);
 		}
 		catch (Exception e)
 		{
@@ -75,27 +80,45 @@ public class MainMap extends BasicGameState implements MouseListener
 	{
 		Input input = gameContainer.getInput();
 
-		if(input.isKeyDown(Input.KEY_W)) { MoveUp();}
-		if(input.isKeyDown(Input.KEY_A)) { MoveLeft();}
-		if(input.isKeyDown(Input.KEY_S)) { MoveDown();}
-		if(input.isKeyDown(Input.KEY_D)) { MoveRight();}
+		Player1.Update();
+
+		if(input.isKeyDown(Input.KEY_W))
+		{
+			MoveUp();
+			return;
+		}
+		if(input.isKeyDown(Input.KEY_A))
+		{
+			MoveLeft();
+			return;
+		}
+		if(input.isKeyDown(Input.KEY_S))
+		{
+			MoveDown();
+			return;
+		}
+		if(input.isKeyDown(Input.KEY_D))
+		{
+			MoveRight();
+			return;
+		}
 
 	}
 
 	private void MoveUp()
 	{
-		offsetY+=speed;
+		GameObjectVault.Player1.Move(PlayerMechanics.Directions.UP);
 	}
 	private void MoveDown()
 	{
-		offsetY-=speed;
+		GameObjectVault.Player1.Move(PlayerMechanics.Directions.DOWN);
 	}
 	private void MoveRight()
 	{
-		offsetX-=speed;
+		GameObjectVault.Player1.Move(PlayerMechanics.Directions.RIGHT);
 	}
 	private void MoveLeft()
 	{
-		offsetX+=speed;
+		GameObjectVault.Player1.Move(PlayerMechanics.Directions.LEFT);
 	}
 }

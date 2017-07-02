@@ -6,7 +6,6 @@ package com.company.gameSettings;
 public class Config
 {
 
-	public static final int SPRITE_BLOCK_WIDTH = 32;
-	public static final int SPRITE_BLOCK_HEIGHT = 32;
+
 
 }

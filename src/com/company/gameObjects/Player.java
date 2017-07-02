@@ -3,6 +3,7 @@ package com.company.gameObjects;
 import com.company.gameLevel.ForegroundLayer;
 import com.company.gameLevel.Level;
 import com.company.gameMechanics.engine.PlayerMechanics;
+import com.company.gameSettings.GameConstants;
 import com.company.gameTile.GameTile;
 
 import java.awt.*;
@@ -13,8 +14,14 @@ import java.awt.*;
 public class Player extends GameObject
 {
 
-	public int playerX;
-	public int playerY;
+	public static int GridX;
+	public static int GridY;
+
+	public static double OffsetX;
+	public static double OffsetY;
+
+	public PlayerMechanics.Directions Facing = PlayerMechanics.Directions.UP;
+	public PlayerMechanics.Directions Moving = PlayerMechanics.Directions.NONE;
 
 	public PlayerMechanics.Directions MovementDirection = PlayerMechanics.Directions.NONE;
 
@@ -29,6 +36,11 @@ public class Player extends GameObject
 	public void NewMap(Level newLevel, int x, int y)
 	{
 		Engine.NewMap(newLevel, x, y);
+	}
+
+	public void Update()
+	{
+		Engine.Update();
 	}
 
 	public boolean Move(PlayerMechanics.Directions direction)

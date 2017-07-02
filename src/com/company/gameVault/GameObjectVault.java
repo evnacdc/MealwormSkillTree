@@ -22,6 +22,7 @@ public class GameObjectVault
 	// Dumb Objects
 	public static DumbBlock Tree1Stump;
 	public static DumbBlock RiverMiddleContinous; //This needs to be broken up in the future
+	public static DumbBlock MapEdge;
 
 	// Background Objects
 	public static BackgroundObject GrassPatchWholeWithMostLeaves;
@@ -48,6 +49,7 @@ public class GameObjectVault
 			// Dumb Game Objects
 			Tree1Stump = new DumbBlock(new GameTile(28, 19, 3, 3, GameConstants.FilePaths.SpriteSheets.BASE));
 			RiverMiddleContinous = new DumbBlock(new GameTile(21, 14, 1, 3, GameConstants.FilePaths.SpriteSheets.BASE));
+			MapEdge = new DumbBlock(new GameTile("img/singleTiles/DevTexture.png"));
 
 			// Background Objects
 			GrassPatchWholeWithMostLeaves = new BackgroundObject(new GameTile(21, 5, GameConstants.FilePaths.SpriteSheets.TERRAIN));
