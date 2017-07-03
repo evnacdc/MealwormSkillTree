@@ -23,6 +23,18 @@ public abstract class Layer
 		this.ImageMap = GenerateGraphics.GenerateImageMap(objectMap);
 	}
 
+	public void AddObject(GameObject obj, int x, int y)
+	{
+		for(int row=0; row<obj.GetSprite().dimensions.height; row++)
+		{
+			for(int col=0; col<obj.GetSprite().dimensions.width; col++ )
+			{
+				this.ObjectMap[y+row][x+col] = obj;
+				this.ImageMap[y+row][x+col] = obj.GetSprite().sprite[row][col];
+			}
+		}
+	}
+
 	public GameObject[][] GetMap()
 	{
 		return this.ObjectMap;

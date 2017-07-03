@@ -23,6 +23,16 @@ public abstract class Level
 		this.Foreground = new ForegroundLayer(CreateForeground());
 	}
 
+	public void AddBackgroundObject(GameObject obj, int x, int y)
+	{
+		this.Background.AddObject(obj,x,y);
+	}
+
+	public void AddForegroundObject(GameObject obj, int x, int y)
+	{
+		this.Foreground.AddObject(obj,x,y);
+	}
+
 	public BackgroundLayer GetBackground()
 	{
 		return Background;

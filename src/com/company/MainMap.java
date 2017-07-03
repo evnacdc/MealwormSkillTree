@@ -5,9 +5,7 @@ import com.company.gameLevel.indoorLevels.GrandmasHouse;
 import com.company.gameMechanics.engine.PlayerMechanics;
 import com.company.gameObjects.Player;
 import com.company.gameSettings.GameConstants;
-import com.company.gameVault.ColorMapVault;
-import com.company.gameVault.LevelVault;
-import com.company.gameVault.GameObjectVault;
+import com.company.gameVault.*;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.state.BasicGameState;
@@ -47,12 +45,14 @@ public class MainMap extends BasicGameState implements MouseListener
 		try
 		{
 			new GameConstants();
+			new GameTileVault();
 			new GameObjectVault();
 			new ColorMapVault();
 			new LevelVault();
+			new TeleportBlockVault();
 
 			Player1 = GameObjectVault.Player1;
-			currentLevel = new GrandmasHouse.Basement();
+			currentLevel = LevelVault.GrandmasBasement;
 			Player1.NewMap(currentLevel,10,10);
 		}
 		catch(Exception e)

@@ -16,8 +16,6 @@ public class GameObjectVault
 
 	public static Player Player1;
 
-	 //TransportObjects
-	public static TransportBlock Door1;
 
 	// Dumb Objects
 	public static DumbBlock Tree1Stump;
@@ -43,8 +41,6 @@ public class GameObjectVault
 		{
 			Player1 = new Player(new GameTile("img/singleTiles/DevTexture.png"));
 
-			//Transport Objects
-			Door1 = new TransportBlock(new GameTile(5, 9, 2, 1, GameConstants.FilePaths.SpriteSheets.BASE));
 
 			// Dumb Game Objects
 			Tree1Stump = new DumbBlock(new GameTile(28, 19, 3, 3, GameConstants.FilePaths.SpriteSheets.BASE));

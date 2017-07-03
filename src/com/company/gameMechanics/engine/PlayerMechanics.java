@@ -4,6 +4,8 @@ import com.company.gameLevel.ForegroundLayer;
 import com.company.gameLevel.Level;
 import com.company.gameObjects.GameObject;
 import com.company.gameObjects.Player;
+import com.company.gameObjects.SolidObjects.ActiveSolidObjects.TeleportBlock;
+import com.company.gameObjects.SolidObjects.ActiveSolidObjects.TransportBlock;
 import com.company.gameSettings.GameConstants;
 import com.company.gameVault.GameObjectVault;
 import org.newdawn.slick.Image;
@@ -27,6 +29,11 @@ public class PlayerMechanics
 	}
 
 	public void NewMap(Level currentMap, int x, int y)
+	{
+		this.SetLevel(currentMap,x,y);
+	}
+
+	public void SetLevel(Level currentMap, int x, int y)
 	{
 		Player.GridX = x;
 		Player.GridY = y;
@@ -90,9 +97,11 @@ public class PlayerMechanics
 
 	public boolean CanMove(Directions direction)
 	{
+		GameObject obj = GetBlock(direction);
+
 		if(Player.Moving == Directions.NONE)
 		{
-			if (GetBlock(direction) == null)
+			if (obj == null || obj instanceof TransportBlock)
 			{
 				return true;
 			}
@@ -143,39 +152,48 @@ public class PlayerMechanics
 		{
 			this.CurrentMap[Player.GridY][Player.GridX] = null;
 
-			switch(direction)
+			// walked into door or other teleport block
+			if(GetBlock(direction) instanceof TeleportBlock)
 			{
-				case UP:
+				TeleportBlock teleBlock = (TeleportBlock)GetBlock(direction);
+				this.SetLevel(teleBlock.DestinationBlock.BlockLevel,teleBlock.DestinationBlock.GetX(),teleBlock.DestinationBlock.GetY());
+			}
+			else
+			{
+				switch (direction)
 				{
-					Player.GridY--;
-					CurrentMap[Player.GridY][Player.GridX] = Player;
-					Player.Moving = direction;
-					return true;
-				}
-				case DOWN:
-				{
-					Player.GridY++;
-					CurrentMap[Player.GridY][Player.GridX] = Player;
-					Player.Moving = direction;
-					return true;
-				}
-				case LEFT:
-				{
-					Player.GridX--;
-					CurrentMap[Player.GridY][Player.GridX] = Player;
-					Player.Moving = direction;
-					return true;
-				}
-				case RIGHT:
-				{
-					Player.GridX++;
-					CurrentMap[Player.GridY][Player.GridX] = Player;
-					Player.Moving = direction;
-					return true;
-				}
 
-				default:
-					return false;
+					case UP:
+					{
+						Player.GridY--;
+						CurrentMap[Player.GridY][Player.GridX] = Player;
+						Player.Moving = direction;
+						return true;
+					}
+					case DOWN:
+					{
+						Player.GridY++;
+						CurrentMap[Player.GridY][Player.GridX] = Player;
+						Player.Moving = direction;
+						return true;
+					}
+					case LEFT:
+					{
+						Player.GridX--;
+						CurrentMap[Player.GridY][Player.GridX] = Player;
+						Player.Moving = direction;
+						return true;
+					}
+					case RIGHT:
+					{
+						Player.GridX++;
+						CurrentMap[Player.GridY][Player.GridX] = Player;
+						Player.Moving = direction;
+						return true;
+					}
+					default:
+						return false;
+				}
 			}
 		}
 		return false;

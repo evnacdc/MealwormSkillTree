@@ -32,7 +32,6 @@ public class ColorMapVault
 		Add(63,72,204,GameObjectVault.StairCaseTop);
 		Add(101,109,214,GameObjectVault.StairCaseMiddle);
 		Add(153,158,227,GameObjectVault.StairCaseBottom);
-		Add(101,109,214,GameObjectVault.Door1);
 		Add(127,127,127,GameObjectVault.StoneWalkWay1);
 	}
 
