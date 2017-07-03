@@ -155,14 +155,13 @@ public class PlayerMechanics
 			// walked into door or other teleport block
 			if(GetBlock(direction) instanceof TeleportBlock)
 			{
-				TeleportBlock teleBlock = (TeleportBlock)GetBlock(direction);
-				this.SetLevel(teleBlock.DestinationBlock.BlockLevel,teleBlock.DestinationBlock.GetX(),teleBlock.DestinationBlock.GetY());
+				TeleportBlock destBlock = (TeleportBlock)((TeleportBlock) GetBlock(direction)).DestinationBlock;
+				this.SetLevel(destBlock.BlockLevel,destBlock.GetX()+destBlock.OffsetPlayerOutX,destBlock.GetY()+destBlock.OffsetPlayerOutY);
 			}
 			else
 			{
 				switch (direction)
 				{
-
 					case UP:
 					{
 						Player.GridY--;

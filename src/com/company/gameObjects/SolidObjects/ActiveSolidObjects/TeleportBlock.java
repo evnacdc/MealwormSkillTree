@@ -12,8 +12,8 @@ public class TeleportBlock extends TransportBlock implements ICoordinates
 	private int X;
 	private int Y;
 
-	private int OffsetPlayerOutX;
-	private int OffsetPlayerOutY;
+	public int OffsetPlayerOutX;
+	public int OffsetPlayerOutY;
 
 	public int Width;
 	public int Height;
