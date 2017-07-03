@@ -1,5 +1,6 @@
 package com.company.gameMechanics.engine;
 
+import com.company.MainMap;
 import com.company.gameLevel.ForegroundLayer;
 import com.company.gameLevel.Level;
 import com.company.gameObjects.GameObject;
@@ -35,6 +36,8 @@ public class PlayerMechanics
 
 	public void SetLevel(Level currentMap, int x, int y)
 	{
+		MainMap.currentLevel = currentMap;
+
 		Player.GridX = x;
 		Player.GridY = y;
 		Player.OffsetX = -x* GameConstants.SPRITE_BLOCK_WIDTH + GameConstants.SPRITE_BLOCK_WIDTH * 13;
@@ -47,6 +50,8 @@ public class PlayerMechanics
 		this.CurrentMap[y][x] = Player;
 
 		CurrentMap[Player.GridY][Player.GridX] = Player;
+
+
 	}
 
 	public GameObject GetBlock(Directions direction)
@@ -157,6 +162,7 @@ public class PlayerMechanics
 			{
 				TeleportBlock destBlock = (TeleportBlock)((TeleportBlock) GetBlock(direction)).DestinationBlock;
 				this.SetLevel(destBlock.BlockLevel,destBlock.GetX()+destBlock.OffsetPlayerOutX,destBlock.GetY()+destBlock.OffsetPlayerOutY);
+
 			}
 			else
 			{

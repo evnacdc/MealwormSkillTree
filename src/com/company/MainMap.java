@@ -24,7 +24,7 @@ public class MainMap extends BasicGameState implements MouseListener
 
 	double speed = .1;
 
-	private Level currentLevel;
+	public static Level currentLevel;
 
 	private static Player Player1;
 
@@ -52,7 +52,7 @@ public class MainMap extends BasicGameState implements MouseListener
 			new TeleportBlockVault();
 
 			Player1 = GameObjectVault.Player1;
-			currentLevel = LevelVault.GrandmasBasement;
+			currentLevel = LevelVault.GrandmasNeighborhood;
 			Player1.NewMap(currentLevel,10,10);
 		}
 		catch(Exception e)

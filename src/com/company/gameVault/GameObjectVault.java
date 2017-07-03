@@ -41,7 +41,6 @@ public class GameObjectVault
 		{
 			Player1 = new Player(new GameTile("img/singleTiles/DevTexture.png"));
 
-
 			// Dumb Game Objects
 			Tree1Stump = new DumbBlock(new GameTile(28, 19, 3, 3, GameConstants.FilePaths.SpriteSheets.BASE));
 			RiverMiddleContinous = new DumbBlock(new GameTile(21, 14, 1, 3, GameConstants.FilePaths.SpriteSheets.BASE));
