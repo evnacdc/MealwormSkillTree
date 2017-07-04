@@ -25,6 +25,8 @@ public class GameObjectVault
 	public static DumbBlock RoofFlatLeft_1x2;
 	public static DumbBlock RoofFlatMiddle_1x2;
 	public static DumbBlock RoofFlatRight_1x2;
+	public static DumbBlock RedBrickWall_3x3;
+	public static DumbBlock StoneWall1_1x3;
 
 	// Background Objects
 	public static BackgroundObject GrassPatchWholeWithMostLeaves;
@@ -53,6 +55,8 @@ public class GameObjectVault
 			RoofFlatRight_1x2 = new DumbBlock(new GameTile(5,13,2,1,GameConstants.FilePaths.SpriteSheets.BASE));
 			RoofFlatMiddle_1x2 = new DumbBlock(new GameTile(4,13,2,1,GameConstants.FilePaths.SpriteSheets.BASE));
 			RoofFlatLeft_1x2 = new DumbBlock(new GameTile(3,13,2,1,GameConstants.FilePaths.SpriteSheets.BASE));
+			RedBrickWall_3x3 = new DumbBlock(new GameTile(0,16,3,3,GameConstants.FilePaths.SpriteSheets.BASE));
+			StoneWall1_1x3 = new DumbBlock(new GameTile(25,8,3,1,GameConstants.FilePaths.SpriteSheets.BASE));
 
 			// Background Objects
 			GrassPatchWholeWithMostLeaves = new BackgroundObject(new GameTile(21, 5, GameConstants.FilePaths.SpriteSheets.TERRAIN));

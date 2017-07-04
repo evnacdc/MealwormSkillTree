@@ -23,6 +23,8 @@ public class TeleportBlockVault
 		GrandmasInsideDoor = new TeleportBlock(GameTileVault.TanSquare, LevelVault.GrandmasGroundFloor, 5,7,0,-1);
 
 
+		LevelVault.GrandmasNeighborhood.AddForegroundObject(GameObjectVault.StoneWall1_1x3,1,1);
+
 		GenerateTeleportPair(GrandmasOutsideDoor,GrandmasInsideDoor);
 	}
 

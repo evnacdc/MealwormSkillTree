@@ -2,6 +2,7 @@ package com.company.gameVault;
 
 import com.company.gameObjects.GameObject;
 import com.company.gameTile.RGB;
+import org.newdawn.slick.Game;
 import sun.awt.image.PixelConverter;
 
 import java.nio.channels.GatheringByteChannel;
@@ -34,6 +35,11 @@ public class ColorMapVault
 		Add(153,158,227,GameObjectVault.StairCaseBottom);
 		Add(127,127,127,GameObjectVault.StoneWalkWay1);
 		Add(62,44,44,GameObjectVault.TallShelf1_1x2);
+		Add(78,23,23, GameObjectVault.RedBrickWall_3x3);
+		Add(84,78,78,GameObjectVault.StoneWall1_1x3);
+		Add(70,70,60,GameObjectVault.RoofFlatLeft_1x2);
+		Add(70,71,60,GameObjectVault.RoofFlatMiddle_1x2);
+		Add(70,72,60,GameObjectVault.RoofFlatRight_1x2);
 	}
 
 	private void Add(int red, int green, int blue, GameObject obj)
