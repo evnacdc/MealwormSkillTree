@@ -33,6 +33,7 @@ public class ColorMapVault
 		Add(101,109,214,GameObjectVault.StairCaseMiddle);
 		Add(153,158,227,GameObjectVault.StairCaseBottom);
 		Add(127,127,127,GameObjectVault.StoneWalkWay1);
+		Add(62,44,44,GameObjectVault.TallShelf1_1x2);
 	}
 
 	private void Add(int red, int green, int blue, GameObject obj)

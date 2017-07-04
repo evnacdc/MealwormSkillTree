@@ -50,8 +50,7 @@ public class PlayerMechanics
 		this.CurrentMap[y][x] = Player;
 
 		CurrentMap[Player.GridY][Player.GridX] = Player;
-
-
+		
 	}
 
 	public GameObject GetBlock(Directions direction)

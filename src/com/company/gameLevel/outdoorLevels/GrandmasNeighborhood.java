@@ -10,17 +10,15 @@ import static com.company.gameUtilities.FileIO.GetObjectArrayFromImage;
  */
 public class GrandmasNeighborhood extends Level
 {
-
 	@Override
 	protected GameObject[][] CreateBackground()
 	{
-		return GetObjectArrayFromImage("img/maps/New Piskel.png");
+		return GetObjectArrayFromImage("img/maps/GrandmasNeighborhoodBackground.png");
 	}
 
 	@Override
 	protected GameObject[][] CreateForeground()
 	{
-		return GetObjectArrayFromImage("img/maps/foreground.png");
+		return GetObjectArrayFromImage("img/maps/GrandmasHomeTownForeground.png");
 	}
-
 }

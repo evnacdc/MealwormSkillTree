@@ -19,8 +19,9 @@ public class TeleportBlockVault
 
 	public TeleportBlockVault()
 	{
-		GrandmasOutsideDoor = new TeleportBlock(GameTileVault.Door1, LevelVault.GrandmasNeighborhood, 15,10,0,2);
-		GrandmasInsideDoor = new TeleportBlock(GameTileVault.Door1, LevelVault.GrandmasGroundFloor, 5,5,0,2);
+		GrandmasOutsideDoor = new TeleportBlock(GameTileVault.Door1, LevelVault.GrandmasNeighborhood, 14,7,0,2);
+		GrandmasInsideDoor = new TeleportBlock(GameTileVault.TanSquare, LevelVault.GrandmasGroundFloor, 5,7,0,-1);
+
 
 		GenerateTeleportPair(GrandmasOutsideDoor,GrandmasInsideDoor);
 	}

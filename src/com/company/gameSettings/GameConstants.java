@@ -19,7 +19,7 @@ public class GameConstants
 		{
 			public static final String BASE = gameTileFolder + "base_out_atlas.png";
 			public static final String TERRAIN = gameTileFolder + "terrain_atlas.png";
-			public static final String OBJECT = gameTileFolder + "terrain_atlas.png";
+			public static final String OBJECT = gameTileFolder + "obj_misk_atlas.png";
 			public static final String BUILD = gameTileFolder + "build_atlas.png";
 		}
 	}
